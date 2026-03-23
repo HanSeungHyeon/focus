@@ -3,6 +3,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Coffee, MapPin, Clock, Instagram, Facebook, ArrowRight } from "lucide-react";
+import heroImg from "../../public/images/hero.png";
+import beansImg from "../../public/images/beans.png";
+import interiorImg from "../../public/images/interior.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -40,7 +43,7 @@ export default function Home() {
       <section className="relative h-screen min-h-[800px] flex items-center justify-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero.png"
+            src={heroImg}
             alt="Focus Hero"
             fill
             className="object-cover opacity-60 mask-hero"
@@ -89,7 +92,7 @@ export default function Home() {
             className="relative h-[600px] rounded-3xl overflow-hidden double-bezel"
           >
             <Image
-              src="/images/beans.png"
+              src={beansImg}
               alt="Philosophy"
               fill
               className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
@@ -204,7 +207,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="relative h-[700px] w-full rounded-[3rem] overflow-hidden group">
             <Image
-              src="/images/interior.png"
+              src={interiorImg}
               alt="Atmosphere"
               fill
               className="object-cover scale-110 group-hover:scale-100 transition-transform duration-[3000ms]"
