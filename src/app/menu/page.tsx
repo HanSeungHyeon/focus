@@ -36,7 +36,7 @@ const menuItems: MenuItem[] = [
   { id: "mintGato", category: "Coffee", name: "Mint Gato", price: "₩6,500", desc: "상당한 매니아층을 보유한, 상큼하고 청량한 민트와 베이스가 어우러진 매력적인 음료.", image: mintGatoImg },
 
   // TEA & ADE
-  { id: "ade1", category: "Tea & Ade", name: "Mint Cato", price: "₩6,500", desc: "은은한 풍미와 민트의 상쾌함이 만난 포커스의 또 다른 시그니처.", image: adeImg },
+  { id: "ade1", category: "Tea & Ade", name: "Lemon Ade", price: "₩6,500", desc: "은은한 풍미와 민트의 상쾌함이 만난 포커스의 또 다른 시그니처.", image: adeImg },
 
   // DESSERT
   { id: "dessert1", category: "Dessert", name: "Signature Dessert", price: "₩3,500", desc: "부드러운 식감과 풍부한 크림, 포커스가 자랑하는 달콤한 휴상의 시그니처 디저트.", image: dessert1Img },

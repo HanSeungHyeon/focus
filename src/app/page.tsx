@@ -1,27 +1,36 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { MapPin, Clock, ArrowRight } from "lucide-react";
 import Header from "./components/Header";
 import shop1Img from "../../public/images/shop1.webp";
 import shop2Img from "../../public/images/shop2.jpg";
 import shop3Img from "../../public/images/shop3.webp";
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.23, 1, 0.32, 1] as any } },
-};
+// Menu images
+import americanoImg from "../public/images/아메리카노.webp";
+import espressoImg from "../public/images/에스프레소.webp";
+import cafeLatteImg from "../public/images/카페라떼.jpg";
+import excellentLatteImg from "../public/images/엑설런트 라떼.webp";
+import mintGatoImg from "../public/images/민트가토.webp";
+import adeImg from "../public/images/에이드1.webp";
+import dessert1Img from "../public/images/디저트.webp";
+import dessert2Img from "../public/images/디저트2.webp";
+import dessert3Img from "../public/images/디저트3.jpg";
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
+const menuShowcase = [
+  { id: "americano", name: "Americano", image: americanoImg },
+  { id: "espresso", name: "Espresso", image: espressoImg },
+  { id: "cafeLatte", name: "Cafe Latte", image: cafeLatteImg },
+  { id: "excellentLatte", name: "Excellent Latte", image: excellentLatteImg },
+  { id: "mintGato", name: "Mint Gato", image: mintGatoImg },
+  { id: "ade1", name: "Lemon Ade", image: adeImg },
+  { id: "dessert1", name: "Signature Dessert", image: dessert1Img },
+  { id: "dessert2", name: "Special Dessert", image: dessert2Img },
+  { id: "dessert3", name: "Cannelé", image: dessert3Img },
+];
 
 export default function Home() {
   const scrollRef = useRef(null);
@@ -33,6 +42,62 @@ export default function Home() {
   const opacity1 = useTransform(scrollYProgress, [0, 0.05, 0.15, 1], [1, 1, 0, 0]);
   const opacity2 = useTransform(scrollYProgress, [0, 0.05, 0.15, 0.3, 0.4, 1], [0, 0, 1, 1, 0, 0]);
   const opacity3 = useTransform(scrollYProgress, [0, 0.3, 0.4, 1], [0, 0, 1, 1]);
+
+  // --- Menu carousel auto-scroll ---
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [paused, setPaused] = useState(false);
+  const rafRef = useRef<number>(0);
+  const speedRef = useRef(0.8); // px per frame
+
+  const autoScroll = useCallback(() => {
+    const el = carouselRef.current;
+    if (el && !paused) {
+      el.scrollLeft += speedRef.current;
+      // seamless loop: when we scroll past the first set, jump back
+      const half = el.scrollWidth / 2;
+      if (el.scrollLeft >= half) {
+        el.scrollLeft -= half;
+      }
+    }
+    rafRef.current = requestAnimationFrame(autoScroll);
+  }, [paused]);
+
+  useEffect(() => {
+    rafRef.current = requestAnimationFrame(autoScroll);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [autoScroll]);
+
+  // --- Mouse drag scroll ---
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeftStart = useRef(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true;
+    startX.current = e.pageX;
+    scrollLeftStart.current = carouselRef.current?.scrollLeft ?? 0;
+    setPaused(true);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current || !carouselRef.current) return;
+    e.preventDefault();
+    const dx = e.pageX - startX.current;
+    carouselRef.current.scrollLeft = scrollLeftStart.current - dx;
+  };
+
+  const handleMouseUp = () => {
+    isDragging.current = false;
+    setPaused(false);
+  };
+
+  const handleInteractionStart = () => setPaused(true);
+  const handleInteractionEnd = () => {
+    if (!isDragging.current) setPaused(false);
+  };
+
+  // duplicate items for seamless loop
+  const loopItems = [...menuShowcase, ...menuShowcase];
 
   return (
     <main className="relative w-full">
@@ -80,6 +145,63 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Menu Showcase Section */}
+      <section id="menu" className="py-24 md:py-32 bg-[#0a0a0a] border-t border-white/5">
+        <div className="space-y-12">
+          <div className="text-center space-y-4 px-6">
+            <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter">OUR MENU</h2>
+            <p className="text-white/40 text-lg">포커스만의 감각이 어우러진 메뉴를 확인해보세요.</p>
+          </div>
+
+          {/* Auto-scrolling Carousel */}
+          <div className="relative">
+            {/* Left / Right fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+
+            <div
+              ref={carouselRef}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseUp}
+              onTouchStart={handleInteractionStart}
+              onTouchEnd={handleInteractionEnd}
+              className="flex gap-5 overflow-x-auto px-8 md:px-24 pb-4 scrollbar-hide select-none cursor-grab active:cursor-grabbing"
+            >
+              {loopItems.map((item, idx) => (
+                <div
+                  key={`${item.id}-${idx}`}
+                  className="flex-shrink-0 group relative w-[260px] md:w-[300px] aspect-square rounded-3xl overflow-hidden border border-white/10"
+                >
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500" />
+                  <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+                    <span className="bg-black/70 px-4 py-1.5 rounded-full text-sm font-bold tracking-widest backdrop-blur-md border border-white/10 text-white">
+                      {item.name}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center px-6">
+            <Link
+              href="/menu"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold rounded-xl transition-all duration-300 tracking-wide"
+            >
+              전체 메뉴 보기 <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-32 bg-[#0a0a0a] border-t border-white/5">
