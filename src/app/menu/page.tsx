@@ -8,7 +8,7 @@ import Header from "../components/Header";
 // Menu images
 import dessert1Img from "../../public/images/디저트.webp";
 import dessert2Img from "../../public/images/디저트2.webp";
-import dessert3Img from "../../public/images/디저트3.webp";
+import dessert3Img from "../../public/images/디저트3.jpg";
 import americanoImg from "../../public/images/아메리카노.webp";
 import espressoImg from "../../public/images/에스프레소.webp";
 import excellentLatteImg from "../../public/images/엑설런트 라떼.webp";
@@ -41,7 +41,7 @@ const menuItems: MenuItem[] = [
   // DESSERT
   { id: "dessert1", category: "Dessert", name: "Signature Dessert", price: "₩3,500", desc: "부드러운 식감과 풍부한 크림, 포커스가 자랑하는 달콤한 휴상의 시그니처 디저트.", image: dessert1Img },
   { id: "dessert2", category: "Dessert", name: "Special Dessert", price: "₩3,000", desc: "깊고 진한 커피의 향과 가장 잘 어울리는 클래식한 풍미의 홈메이드 디저트.", image: dessert2Img },
-  { id: "dessert3", category: "Dessert", name: "Special Dessert", price: "₩3,500", desc: "깊고 진한 커피의 향과 가장 잘 어울리는 클래식한 까눌레.", image: dessert2Img },
+  { id: "dessert3", category: "Dessert", name: "Canelé", price: "₩3,500", desc: "깊고 진한 커피의 향과 가장 잘 어울리는 클래식한 까눌레.", image: dessert3Img },
 ];
 
 export default function MenuPage() {
