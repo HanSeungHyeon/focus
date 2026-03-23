@@ -60,7 +60,7 @@ export default function Home() {
               The Essence of Deep Taste
             </span>
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-white leading-[0.9]">
-              STAY <span className="text-accent underline decoration-white/10 decoration-8 underline-offset-8">FOCUSED</span>
+              STAY <span className="text-accent underline decoration-white/10 decoration-8 underline-offset-8">FOCUS</span>
             </h1>
             <p className="max-w-xl mx-auto text-lg md:text-xl text-white/60 font-medium leading-relaxed">
               본연의 맛에 집중하는 시간. 소음에서 벗어나 <br className="hidden md:block" />
@@ -95,7 +95,7 @@ export default function Home() {
               className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
             />
           </motion.div>
-          
+
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -115,7 +115,7 @@ export default function Home() {
                 최상의 생두, 정교한 로스팅, 그리고 단 한 방울의 완벽한 추출. 화려한 장식보다는 맛의 본질에 집중하며, 당신의 생각과 감각이 명료해지는 시간을 선사합니다.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-6 pt-6">
               <div className="p-6 bg-white/5 border border-white/5 rounded-2xl">
                 <Coffee className="w-6 h-6 text-accent mb-3" />
@@ -151,26 +151,26 @@ export default function Home() {
             className="grid md:grid-cols-3 gap-8"
           >
             {[
-              { 
-                idx: "01", 
-                title: "Focus Blend", 
-                price: "₩6,500", 
-                desc: "다크 초콜릿의 무게감과 구운 견과류의 고소함이 어우러진 시그니처 블렌딩", 
-                tag: "HOUSE" 
+              {
+                idx: "01",
+                title: "Focus Blend",
+                price: "₩6,500",
+                desc: "다크 초콜릿의 무게감과 구운 견과류의 고소함이 어우러진 시그니처 블렌딩",
+                tag: "HOUSE"
               },
-              { 
-                idx: "02", 
-                title: "Quiet Latte", 
-                price: "₩7,000", 
-                desc: "부드러운 스팀 밀크와 농밀한 에스프레소가 만나 입안을 차분하게 감싸는 라떼", 
-                tag: "POPULAR" 
+              {
+                idx: "02",
+                title: "Quiet Latte",
+                price: "₩7,000",
+                desc: "부드러운 스팀 밀크와 농밀한 에스프레소가 만나 입안을 차분하게 감싸는 라떼",
+                tag: "POPULAR"
               },
-              { 
-                idx: "03", 
-                title: "Black Essence", 
-                price: "₩6,000", 
-                desc: "원두 본연의 오일감과 깊은 산미를 투명하게 담아낸 프리미엄 드립 커피", 
-                tag: "PURE" 
+              {
+                idx: "03",
+                title: "Black Essence",
+                price: "₩6,000",
+                desc: "원두 본연의 오일감과 깊은 산미를 투명하게 담아낸 프리미엄 드립 커피",
+                tag: "PURE"
               },
             ].map((item, i) => (
               <motion.div key={i} variants={fadeIn} className="double-bezel p-10 group">
@@ -210,7 +210,7 @@ export default function Home() {
               className="object-cover scale-110 group-hover:scale-100 transition-transform duration-[3000ms]"
             />
             <div className="absolute inset-0 bg-[#0a0a0a]/30 group-hover:bg-[#0a0a0a]/10 transition-colors duration-1000" />
-            
+
             <div className="absolute bottom-20 left-12 right-12 md:left-20 md:right-20 flex flex-col md:flex-row justify-between items-end gap-10">
               <div className="max-w-2xl text-white space-y-4">
                 <h3 className="text-4xl md:text-6xl font-black tracking-tighter leading-none italic">QUIET LUXURY SPACE</h3>
@@ -221,10 +221,10 @@ export default function Home() {
               </div>
               <div className="flex gap-4">
                 <div className="w-16 h-16 rounded-full glass flex items-center justify-center border border-white/20">
-                   <Instagram className="w-6 h-6 text-white" />
+                  <Instagram className="w-6 h-6 text-white" />
                 </div>
                 <div className="w-16 h-16 rounded-full glass flex items-center justify-center border border-white/20">
-                   <Facebook className="w-6 h-6 text-white" />
+                  <Facebook className="w-6 h-6 text-white" />
                 </div>
               </div>
             </div>
@@ -239,7 +239,7 @@ export default function Home() {
             <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter">CONTACT US</h2>
             <p className="text-white/40 text-lg">오늘 당신의 농도는 어떠신가요?</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-10 text-left max-w-4xl mx-auto">
             <div className="p-10 double-bezel space-y-6">
               <div className="space-y-2">
@@ -249,7 +249,7 @@ export default function Home() {
                 <p className="text-xl font-bold text-white">서울시 마포구 연남동 123-45</p>
                 <p className="text-white/40 text-sm">Follow the light inside the narrow alley.</p>
               </div>
-              
+
               <div className="space-y-2">
                 <div className="flex items-center gap-3 text-accent font-black tracking-widest text-xs uppercase mb-2">
                   <Clock className="w-3 h-3" /> Service
@@ -258,16 +258,16 @@ export default function Home() {
                 <p className="text-white/40 text-sm">Last order 21:30</p>
               </div>
             </div>
-            
+
             <div className="p-10 double-bezel flex flex-col justify-center items-center text-center space-y-6">
-               <h4 className="text-2xl font-black text-white">FOCUS ANYTIME</h4>
-               <p className="text-white/40 text-sm leading-relaxed">
-                 공간 대여 및 단체 예약 문의는 아래 버튼을 통해 <br />
-                 연락 주시면 정성껏 답변 드리겠습니다.
-               </p>
-               <button className="w-full py-4 bg-white text-black font-black rounded-xl hover:bg-white/80 transition-colors tracking-widest flex items-center justify-center gap-2">
-                 TALK TO US <ArrowRight className="w-4 h-4" />
-               </button>
+              <h4 className="text-2xl font-black text-white">FOCUS ANYTIME</h4>
+              <p className="text-white/40 text-sm leading-relaxed">
+                공간 대여 및 단체 예약 문의는 아래 버튼을 통해 <br />
+                연락 주시면 정성껏 답변 드리겠습니다.
+              </p>
+              <button className="w-full py-4 bg-white text-black font-black rounded-xl hover:bg-white/80 transition-colors tracking-widest flex items-center justify-center gap-2">
+                TALK TO US <ArrowRight className="w-4 h-4" />
+              </button>
             </div>
           </div>
         </div>

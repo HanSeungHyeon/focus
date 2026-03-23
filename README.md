@@ -1,4 +1,4 @@
-# Focus Coffee | STAY FOCUSED
+# Focus Coffee | STAY FOCUS
 
 A premium, dark-themed coffee shop landing page built with **Next.js**, **Tailwind CSS**, and **Framer Motion**.
 Inspired by the **Supanova Design Skill** for high-agency frontend aesthetics.

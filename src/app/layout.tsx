@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Focus Coffee | 집중을 위한 완벽한 한 잔",
+  title: "Focus | 포커스",
   description: "어두운 분위기의 프리미엄 커피숍 Focus입니다. 본연의 맛에 집중하며 조용한 공간을 제공합니다.",
 };
 
