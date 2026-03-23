@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { MapPin, Clock, ArrowRight } from "lucide-react";
 import logoImg from "../../public/images/logo.webp";
 import shop1Img from "../../public/images/shop1.webp";
@@ -43,10 +44,10 @@ export default function Home() {
           <div className="text-2xl font-black tracking-tighter text-white">FOCUS</div>
         </div>
         <div className="hidden md:flex gap-10 text-sm font-medium tracking-wide text-white/60">
-          <a href="/" className="hover:text-white transition-colors">MAIN</a>
-          <a href="/menu" className="hover:text-white transition-colors">MENU</a>
-          <a href="/#story" className="hover:text-white transition-colors">STORY</a>
-          <a href="/#contact" className="hover:text-white transition-colors">CONTACT</a>
+          <Link href="/" className="hover:text-white transition-colors">MAIN</Link>
+          <Link href="/menu" className="hover:text-white transition-colors">MENU</Link>
+          <Link href="/#story" className="hover:text-white transition-colors">STORY</Link>
+          <Link href="/#contact" className="hover:text-white transition-colors">CONTACT</Link>
         </div>
         <div className="w-[100px] hidden md:block"></div> {/* Spacer for symmetry */}
       </nav>

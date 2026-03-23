@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { X } from "lucide-react";
 
 import logoImg from "../../../public/images/logo.webp";
@@ -59,10 +60,10 @@ export default function MenuPage() {
           <div className="text-2xl font-black tracking-tighter text-white">FOCUS</div>
         </div>
         <div className="hidden md:flex gap-10 text-sm font-medium tracking-wide text-white/60">
-          <a href="/" className="hover:text-white transition-colors">MAIN</a>
-          <a href="/menu" className="hover:text-white transition-colors text-white">MENU</a>
-          <a href="/#story" className="hover:text-white transition-colors">STORY</a>
-          <a href="/#contact" className="hover:text-white transition-colors">CONTACT</a>
+          <Link href="/" className="hover:text-white transition-colors">MAIN</Link>
+          <Link href="/menu" className="hover:text-white transition-colors text-white">MENU</Link>
+          <Link href="/#story" className="hover:text-white transition-colors">STORY</Link>
+          <Link href="/#contact" className="hover:text-white transition-colors">CONTACT</Link>
         </div>
         <div className="w-[100px] hidden md:block"></div>
       </nav>
