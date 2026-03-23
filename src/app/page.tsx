@@ -2,9 +2,8 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { MapPin, Clock, ArrowRight } from "lucide-react";
-import logoImg from "../../public/images/logo.webp";
+import Header from "./components/Header";
 import shop1Img from "../../public/images/shop1.webp";
 import shop2Img from "../../public/images/shop2.jpg";
 import shop3Img from "../../public/images/shop3.webp";
@@ -37,20 +36,7 @@ export default function Home() {
 
   return (
     <main className="relative w-full">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass px-6 py-4 flex justify-between items-center bg-[#0a0a0a]/70 backdrop-blur-md border-b border-white/5">
-        <div className="flex items-center gap-2">
-          <Image src={logoImg} alt="FOCUS Logo" width={32} height={32} className="w-8 h-8 rounded-full" />
-          <div className="text-2xl font-black tracking-tighter text-white">FOCUS</div>
-        </div>
-        <div className="hidden md:flex gap-10 text-sm font-medium tracking-wide text-white/60">
-          <Link href="/" className="hover:text-white transition-colors">MAIN</Link>
-          <Link href="/menu" className="hover:text-white transition-colors">MENU</Link>
-          <Link href="/#story" className="hover:text-white transition-colors">STORY</Link>
-          <Link href="/#contact" className="hover:text-white transition-colors">CONTACT</Link>
-        </div>
-        <div className="w-[100px] hidden md:block"></div> {/* Spacer for symmetry */}
-      </nav>
+      <Header activePage="/" />
 
       {/* Hero Container for Scroll Effect */}
       <div id="main" ref={scrollRef} className="relative h-[500vh]">
