@@ -6,6 +6,7 @@ import { Coffee, MapPin, Clock, Instagram, Facebook, ArrowRight } from "lucide-r
 import heroImg from "../../public/images/hero.png";
 import beansImg from "../../public/images/beans.png";
 import interiorImg from "../../public/images/interior.png";
+import logoImg from "../../public/images/logo.webp";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -27,7 +28,10 @@ export default function Home() {
     <main className="relative w-full">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass px-6 py-4 flex justify-between items-center bg-[#0a0a0a]/70 backdrop-blur-md border-b border-white/5">
-        <div className="text-2xl font-black tracking-tighter text-white">FOCUS</div>
+        <div className="flex items-center gap-2">
+          <Image src={logoImg} alt="FOCUS Logo" width={32} height={32} className="w-8 h-8 rounded-full" />
+          <div className="text-2xl font-black tracking-tighter text-white">FOCUS</div>
+        </div>
         <div className="hidden md:flex gap-10 text-sm font-medium tracking-wide text-white/60">
           <a href="#about" className="hover:text-white transition-colors">OUR STORY</a>
           <a href="#menu" className="hover:text-white transition-colors">MENU</a>
