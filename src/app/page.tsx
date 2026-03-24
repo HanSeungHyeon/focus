@@ -7,18 +7,18 @@ import { MapPin, Clock, ArrowRight } from "lucide-react";
 import Header from "./components/Header";
 import shop1Img from "../../public/images/shop1.webp";
 import shop2Img from "../../public/images/shop2.jpg";
-import shop3Img from "../../public/images/shop3.webp";
+import shop3Img from "../../public/images/shop3.jpg";
 
 // Menu images
-import americanoImg from "../public/images/아메리카노.webp";
-import espressoImg from "../public/images/에스프레소.webp";
-import cafeLatteImg from "../public/images/카페라떼.jpg";
-import excellentLatteImg from "../public/images/엑설런트 라떼.webp";
-import mintGatoImg from "../public/images/민트가토.webp";
-import adeImg from "../public/images/에이드1.webp";
-import dessert1Img from "../public/images/디저트.webp";
-import dessert2Img from "../public/images/디저트2.webp";
-import dessert3Img from "../public/images/디저트3.jpg";
+import americanoImg from "../public/images/coffee/americano.webp";
+import espressoImg from "../public/images/coffee/espresso.webp";
+import cafeLatteImg from "../public/images/coffee/caffelatte.jpg";
+import excellentLatteImg from "../public/images/coffee/excellent.webp";
+import mintGatoImg from "../public/images/coffee/mintgatto.webp";
+import adeImg from "../public/images/tea/ade1.webp";
+import dessert1Img from "../public/images/desert/desert1.webp";
+import dessert2Img from "../public/images/desert/desert2.webp";
+import dessert3Img from "../public/images/desert/desert3.jpg";
 
 const menuShowcase = [
   { id: "americano", name: "Americano", image: americanoImg },
@@ -248,7 +248,7 @@ export default function Home() {
       <footer className="py-12 border-t border-white/5 text-center px-6">
         <div className="text-3xl font-black tracking-tighter text-white/10 mb-6">FOCUS COFFEE BREWERS</div>
         <p className="text-white/20 text-[10px] tracking-[0.3em] uppercase">
-          &copy; 2026 FOCUS. All rights reserved. Designed with Supanova.
+          &copy; 2026 FOCUS COFFEE. All rights reserved.
         </p>
       </footer>
     </main>

@@ -9,8 +9,8 @@ import logoImg from "../../../public/images/logo.webp";
 const navLinks = [
   { href: "/", label: "MAIN" },
   { href: "/menu", label: "MENU" },
-  { href: "/#story", label: "STORY" },
-  { href: "/#contact", label: "CONTACT" },
+  { href: "/story", label: "STORY" },
+  { href: "/contact", label: "CONTACT" },
 ];
 
 export default function Header({ activePage = "/" }: { activePage?: string }) {
