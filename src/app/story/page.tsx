@@ -25,6 +25,8 @@ type StoryItem = {
   video?: string;
 };
 
+const basePath = process.env.NODE_ENV === "production" ? "/focus" : "";
+
 const storyItems: StoryItem[] = [
   {
     id: "story-end",
@@ -125,7 +127,7 @@ HBD FOCUS COFFEE 2nd Anniversary❤️
     subtitle: "The Beginning",
     date: "2022.01.19",
     desc: "천안 동남구의 좁은 골목 안, 따뜻한 불빛 하나로 시작된 포커스. '본연의 맛에 집중하자'는 철학 아래, 작지만 확고한 공간이 탄생했습니다. 소음과 분주함에서 벗어나 오직 커피 한 잔에 몰입할 수 있는 곳을 만들고 싶었습니다.",
-    video: "/video/opening.mp4",
+    video: `${basePath}/video/opening.mp4`,
   },
 ];
 
